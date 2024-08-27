@@ -1,0 +1,165 @@
+Write a Python program to convert a dictionary to a list of tuples
+  input_dict = {
+    'apple': 3,
+    'banana': 2,
+    'cherry': 5,
+    'date': 2
+}
+list_of_tuples = list(input_dict.items())
+print(list_of_tuples)
+
+   Write a Python program to sort a given dictionary by its values
+my_dict = {'apple': 10, 'banana': 5, 'orange': 8, 'pear': 12}
+sorted_items = sorted(my_dict.items(), key=lambda item: item[1])
+sorted_dict = dict(sorted_items)
+print("Sorted dictionary by values (ascending):")
+print(sorted_dict)
+sorted_items_desc = sorted(my_dict.items(), key=lambda item: item[1], reverse=True)
+sorted_dict_desc = dict(sorted_items_desc)
+print("Sorted dictionary by values (descending):")
+print(sorted_dict_desc)
+
+  Write a Python program to find the frequency of all elements in a given dictionary.
+  from collections import Counter
+dict={'a':1,'b':2,'c':2,'d':3}
+values=dict.values()
+frequency=Counter(values)
+for value,count in frequency.items():
+  print(value,":",count)
+
+  Write a Python program to find the keys with the maximum and minimum values in a given dictionary.
+  my_dict = {
+    'a': 10,
+    'b': 20,
+    'c': 5,
+    'd': 15
+}
+def find_keys_with_max_min(dictionary):
+    if not dictionary:
+        return None, None 
+    max_value = max(dictionary.values())
+    min_value = min(dictionary.values())
+    max_keys = [key for key, value in dictionary.items() if value == max_value]
+    min_keys = [key for key, value in dictionary.items() if value == min_value]
+    return max_keys, min_keys
+max_keys, min_keys = find_keys_with_max_min(my_dict)
+print(f"The key(s) with the maximum value(s): {max_keys}")
+print(f"The key(s) with the minimum value(s): {min_keys}")
+
+  Write a Python program to find the maximum and minimum values in a given dictionary.
+  a={'apple':1,
+  'grape':5,
+  'banana':9,
+  'mango':3,
+  'fruit':8}
+values=a.values()
+max_value=max(values)
+min_value=min(values)
+print("maximum value in a given dictinary is :",max_value)
+print("minimum value in a given dictinary is :",min_value)
+
+   Write a Python program to remove a given key from a given dictionary
+  mydict = {
+    'name': 'Alice',
+    'age': 30,
+    'city': 'New York',
+    'email': 'alice@example.com'
+}
+my_dict=tuple(mydict)
+def remove_key_del(dictionary, key):
+    if key in dictionary:
+        del dictionary[key]
+        print(f"Key '{key}' has been removed using del.")
+    else:
+        print(f"Key '{key}' does not exist in the dictionary.")
+key_to_remove = 'age'
+remove_key_del(my_dict, key_to_remove)
+print("Updated dictionary:", my_dict)
+
+  Write a Python program to check if a given value exists in a given dictionary.
+      a={'apple':1,
+  'grape':5,
+  'banana':9,
+  'mango':3,
+  'fruit':8}
+def value_check(dict,k):
+  return k in dict.values()
+value=9
+if value_check(a,value):
+  print("value is exist")
+else:
+  print("value not exist")
+
+     Write a Python program to concatenate two dictionaries.
+    a={'mango':1,'apple':2}
+b={'banana':4,'grape':6}
+c=a|b
+print(c)
+
+  Write a Python program to check if a given key exists in a given dictionary.
+  a={'apple':1,
+  'grape':5,
+  'banana':9,
+  'mango':3,
+  'fruit':8}
+def key_check(dict,key):
+  return key in dict
+key_word='fruit'
+if key_check(a,key_word):
+  print("key is exist")
+else:
+  print("key not exist")
+
+    Write a Python program to find the length of a given dictionary
+a={'apple':1,'banana':3,'orange':9,'mango':6}
+print(len(a))
+
+   Write a Python program to sort a given tuple in ascending order
+  a=(4,6,5,1,2,3,9,7,8)
+b=sorted(list(a))
+print(tuple(b))
+
+   Write a Python program to check if a given element exists in a given tuple
+  a=(1,2,3,4,5,6)
+target=4
+if target in a:
+  print("element is found")
+else:
+  print("element is not found")
+
+  Write a Python program to convert a tuple to a list.
+  a=(1,2,3,4,5)
+print(list(a))
+
+   Write a Python program to find the index of a given element in a given tuple
+  a=(1,2,3,4,5,6,7)
+t=5
+c=None
+for i in range(len(a)):
+  if t==a[i]:
+    c=i
+if c is not None:
+  print("element found at position ",c)
+else:
+  print("element not found")
+
+   Write a Python program to find the maximum and minimum elements in a given tuple.
+  a=(45,35,85,64,28,61,14,19,22)
+b=tuple(list(sorted(a)))
+print("minimum element is :",b[0])
+print("maximum element is :",b[-1])
+
+   Write a Python program to find the maximum and minimum elements in a given tuple.
+  a=(45,35,85,64,28,61,14,19,22)
+b=tuple(list(sorted(a)))
+print("minimum element is :",b[0])
+print("maximum element is :",b[-1])
+
+  Write a Python program to reverse a given tuple.
+  a=(1,2,3,4,5,6)
+print(a[::-1])
+
+
+  Write a Python program to find the length of a given tuple.
+  a=(23,12,45,32,43,23)
+print(len(a))

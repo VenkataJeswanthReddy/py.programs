@@ -38,7 +38,7 @@ my_list = list(my_tuple)
 print("The list is:", my_list)
 
 Write a Python program to convert a list to a tuple
-My_list=(1,2,3,4,5)
+My_list=[1,2,3,4,5]
 My_tuple=tuple(My_list)
 print("The tuple is:", My_tuple)
 

@@ -1,0 +1,154 @@
+Write a Python program to find the kth smallest element in a given list.
+a=[34,5,33,43,65,87,58,99]
+k=1
+b=list(sorted(a))
+print(b)
+print(b[k-1])
+
+Write a Python program to find the difference between two lists.
+a=[1,2,3,4,5,6,7,7]
+b=[5,6,7,8,9,10]
+s1=set(a)
+s2=set(b)
+diff1=s1-s2
+diff2=s2-s1
+c=list(diff1)+list(diff2)
+print(c)
+
+Write a Python program to find the intersection of two lists.
+a=[1,2,3,4,5,6]
+b=[4,5,6,7,8,9]
+s1=set(a)
+s2=set(b)
+i=s1 & s2
+intersection_list=list(i)
+print(intersection_list)
+
+Write a Python program to find the union of two lists.
+a=[1,2,3,4,5,6]
+b=[4,5,6,7,8,9]
+s1=set(a)
+s2=set(b)
+i=s1 | s2
+union_list=list(i)
+print(union_list)
+
+Write a Python program to find the common elements between two lists.
+a=[1,2,3,4,5,6]
+b=[4,5,6,7,8,9]
+s1=set(a)
+s2=set(b)
+i=s1 & s2
+common_list=list(i)
+print(common_list)
+
+Write a Python program to find the first n Fibonacci numbers and store them in a list.
+n=10
+c=[]
+a,b=0,1
+for i in range(n):
+  c.append(a)
+  a,b=b,a+b
+print(c)  
+
+
+ Write a Python program to find the largest subsequence sum in a given list of integers.
+a=[2,5,3,6,7,8]
+a.sort()
+b=a[-1]+a[-2]
+print(" largest subsequence sum in a given list of integers is ", b)
+
+Write a Python program to merge two sorted lists into a single sorted list.
+a=[7,6,5,2,4,3]
+b=[3,6,5,8,9,1]
+a.sort()
+b.sort()
+c=a+b
+print(c)
+c.sort()
+print(c)
+
+Write a Python program to remove all even numbers from a given list.
+a=[1,2,3,4,5,7,6,8,9]
+b=[]
+c=[]
+for i in range(len(a)):
+  if a[i]%2==0:
+    b.append(a[i])
+  else:
+    c.append(a[i])
+print(c)    
+
+ Write a Python program to find the maximum and minimum elements in a given list.
+a=[6,5,4,1,2,3,7,9,8]
+a.sort()
+print("maximum element :",a[-1])
+print("minimum element :",a[0])
+
+ Write a Python program to shuffle a given list.
+import random
+a=[2,3,4,5,6,7,8,9]
+random.shuffle(a)
+print(a)
+
+
+Write a Python program to concatenate two lists.
+a=[1,2,3,4,5]
+b=[6,7,8,9]
+c=a+b
+print(c)
+
+Write a Python program to sort a given list in ascending order.
+a=[87,56,45,76,23,59,47]
+a.sort()
+print(a)
+
+Write a Python program to find the frequency of all elements in a given list.
+my_list = [10,20,10,30,20,10,40,30]
+frequency_dict = {}
+for element in my_list:
+    if element in frequency_dict:
+        frequency_dict[element]+=1
+    else:
+        frequency_dict[element]=1
+for key, value in frequency_dict.items():
+    print(f"Element {key} occurs {value} times.")
+
+ Write a Python program to find the index of a given element in a given list.
+a=[23,45,34,67,43,56,78,99]
+b=99
+for i in range(len(a)):
+  if b==a[i]:
+    index=i
+    break
+if index!=-1:
+  print(f"element at {i} position")
+else:
+  print("element not found")
+
+Write a Python program to reverse a given list.
+a=[1,2,3,4,5,6,7]
+a.reverse()
+print(a)
+
+Write a Python program to remove duplicates from a given list.
+a=[1,5,9,6,3,2,2,1,5,6,9,7,3]
+b=list(set(a))
+print(b)
+
+Write a Python program to find the smallest number in a given list.
+a=[4,1,2,3,5,7,9,8,6]
+a.sort()
+print("minimum :",a[0])
+
+Write a Python program to find the second largest number in a given list.
+a=[4,1,2,3,5,7,9,8,6,0]
+a.sort()
+print("minimum :",a[-2])
+
+Write a Python program to find the sum of all elements in a given list.
+a=[23,45,32]
+s=0
+for i in range(len(a)):
+  s+=a[i]
+print(s)  

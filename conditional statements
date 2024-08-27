@@ -1,0 +1,201 @@
+Write a Python program to check if a given number is a palindrome or not using recursion
+def is_palindrome(s):
+  if len(s)<=1:
+    return True
+  if s[1]==s[-1]:
+    return is_palindrome(s[1:-1])
+  else:
+    return False
+def check_palindrome(n):
+  s_n=str(n)
+  return is_palindrome(s_n)
+n1=123
+if check_palindrome(n1):
+  print("palindrome")
+else:
+  print("not palindrome")
+
+  Write a Python program to check if a given string is a valid password.
+  password="Number.12"
+special_char="!@#$%^&*_-=|\/.,;:+"
+min_len=8
+max_len=20
+if len(password) < min_len or len(password) > max_len:
+  print(f"pasword must be in between {min_len} and {max_len} characters")
+else:
+  has_upper=any(c.isupper() for c in password)
+  has_lower=any(c.islower() for c in password)
+  has_digit=any(c.isdigit() for c in password)
+  has_special=any(c in special_char for c in password)
+  if has_upper and has_lower and has_digit and has_special:
+    print(f"{password} is valid")
+  else:
+    print(f"{password} is not valid")
+
+  Write a Python program to find the area of a circle, given the radius.
+  import math
+r=3
+area=math.pi*r*r
+print(area)
+
+Write a Python program to find the roots of a quadratic equation.
+import math
+a=int(input())
+b=int(input())
+c=int(input())
+x=b**2-4*a*c
+r1=-b+math.sqrt(x)/(2*a)
+r2=-b-math.sqrt(x)/(2*a)
+print(r1)
+print(r2)
+
+Write a Python program to find the greatest common divisor (GCD) of three numbers.
+import math
+a,b,c=2,4,6
+gcd=math.gcd(a,b,c)
+print(gcd)
+
+ Write a Python program to find the average of a list of numbers.
+a=[1,2,3,4,5,6,7,8,9]
+n=len(a)
+s=0
+for i in range(n):
+  s=s+a[i]
+avg=s//n
+print(avg)
+
+Write a Python program to check if a given number is a perfect square or not.
+import math
+n=26
+s=math.sqrt(n)
+if n==s*s:
+  print("perfect square")
+else:
+  print("not a perfect square")
+
+  Write a Python program to find the largest prime number less than a given number.
+  def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+def largest_prime_less_than(n):
+    for i in range(n - 1, 1, -1):
+        if is_prime(i):
+            return i
+    return None 
+number = int(input())
+largest_prime = largest_prime_less_than(number)
+if largest_prime:
+    print(f"The largest prime number less than {number} is {largest_prime}.")
+else:
+    print(f"There are no prime numbers less than {number}.")
+
+
+Write a Python program to check if a given string is a valid email address.
+import re
+email = input()
+pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+if re.match(pattern, email):
+    print(f"{email} is a valid email address.")
+else:
+    print(f"{email} is not a valid email address.")
+
+
+  Write a Python program to find the sum of all even numbers in a list
+a=[1,2,4,6,3,8,65,45,33,44]
+n=len(a)
+even_sum=0
+for i in range(n):
+  if a[i]%2==0:
+    even_sum+=a[i]
+print(even_sum)    
+
+Write a Python program to find the sum of all odd numbers in a list.
+a=[2,3,4,5,6,3,7,5,3,1]
+n=len(a)
+odd_sum=0
+for i in range(n):
+  if a[i]%2!=0:
+    odd_sum+=a[i]
+print(odd_sum)    
+
+ Write a Python program to check if a given number is divisible by 3 or 5.
+n=15
+if n%3==0:
+  print(f"given number {n} is divisible by 3")
+elif n%5==0:
+  print(f"given number {n} is divisible by 5")
+else:
+  print(f"given number {n} is not divisible by 3 or 5")
+
+Write a Python program to check if a given character is a vowel or consonant.
+c="1"
+vowels="aeiouAEIOU"
+if c.isalpha():
+  if c in vowels:
+    print("vowel")
+  else:
+    print("consonant")
+else:
+  print(f"given {c} is not a alphabet")
+
+
+Write a Python program to check if a given string is a palindrome or not.
+n="madam"
+if n==n[::-1]:
+  print("palindrome")
+else:
+  print("not a palindrome")
+
+   Write a Python program to find the smallest of three numbers.
+  a,b,c=3,6,2
+print(min(a,b,c))
+
+   Write a Python program to check if a given number is prime or not.
+  n=4
+c=0
+for i in range(1,n+1):
+  if n%i==0:
+    c=c+1
+if c==2:
+  print("prime number")
+else:
+  print("not a prime number")
+
+
+  Write a Python program to check if a number is even or odd.
+  n=6
+if n%2==0:
+  print("even number")
+else:
+  print("odd number")
+
+  Write a Python program to check if a year is a leap year or not.
+  year=2024
+if year%4==0 or year%100!=0 or year%400==0:
+  print("leap year")
+else:
+  print("not a leap year")
+
+  Write a Python program to find the largest of three numbers
+a,b,c=5,7,3
+print(max(a,b,c))
+
+  Write a Python program to check if a number is positive, negative or zero.
+  n=-43
+if n>0:
+  print("positive number")
+elif n<0:
+  print("negative number")
+else:
+  print("zero")

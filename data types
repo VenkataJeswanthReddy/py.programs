@@ -1,0 +1,54 @@
+Write a Python program to find the union of two set
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+union_set = set1|set2
+print("The union of the sets is:",union_set)
+
+Write a Python program to sort a list in descending order
+my_list = [12, 4, 56, 23, 9, 89, 3]
+my_list.sort(reverse=True)
+print("List sorted in descending order:", my_list)
+
+ Write a Python program to remove all occurrences of a specified element from a list
+ a=[1,2,3,2,2,4,4,4]
+a=list(set(a))
+print(a)
+
+Write a Python program to find the intersection of two sets
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+intersection_set = set1.intersection(set2)
+print("The intersection of the sets is:", intersection_set)
+
+ Write a Python program to find the length of a string.
+ my_string = "abcdefghijklmnopqrstuvwxyz"
+string_length = len(my_string)
+print("The length of the string is:",string_length)
+
+
+Write a Python program to concatenate two strings
+string1 = "Hello"
+string2 = "World"
+concatenated_string = string1 + " " + string2
+print("The concatenated string is:", concatenated_string)
+
+
+Write a Python program to convert a tuple to a listmy_tuple = (1, 2, 3, 4, 5)
+my_list = list(my_tuple)
+print("The list is:", my_list)
+
+Write a Python program to convert a list to a tuple
+My_list=(1,2,3,4,5)
+My_tuple=tuple(My_list)
+print("The tuple is:", My_tuple)
+
+Write a Python program to convert a string to an integer.
+my_string = "12345"
+my_integer = int(my_string)
+print("The integer is:", my_integer)
+
+Write a Python program to convert a string to a float.
+my_string = "12345"
+my_float = float(my_string)
+print("The float is:", my_float)
+

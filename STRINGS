@@ -1,0 +1,222 @@
+Write a Python program to find the number of words in a given string.
+'''st="number of words"
+count_word="e"
+count=st.count(count_word)
+print(count)
+st="number of words"
+c=0
+for i in st:
+  if i.isalpha():
+    c+=1
+print(c)'''
+
+st="number of words"
+words=st.split()
+print(len(words))
+
+Write a Python program to find the frequency of all characters in a given string.
+st="frequency"
+count={}
+for i in st:
+  if i in count:
+    count[i]+=1
+  else:
+    count[i]=1
+for i,c in count.items():
+  print(f"{i}={c}")
+
+ Write a Python program to find the largest palindrome substring in a given string.
+def find_largest_palindrome(s):
+    def expand_around_center(left, right):
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
+    largest_palindrome = ""
+    for i in range(len(s)):
+        odd_palindrome = expand_around_center(i, i)
+        if len(odd_palindrome) > len(largest_palindrome):
+            largest_palindrome = odd_palindrome
+        even_palindrome = expand_around_center(i, i + 1)
+        if len(even_palindrome) > len(largest_palindrome):
+            largest_palindrome = even_palindrome
+    return largest_palindrome
+input_string = "babad"
+print(f"Largest palindrome substring in '{input_string}' is '{find_largest_palindrome(input_string)}'")
+
+
+Write a Python program to check if a given string is a valid email address.
+import re
+def is_valid_email(email):
+    email_regex = re.compile(
+        r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+    )
+    return bool(email_regex.match(email))
+email_to_check = "example@example.com"
+if is_valid_email(email_to_check):
+    print(f"'{email_to_check}' is a valid email address.")
+else:
+    print(f"'{email_to_check}' is not a valid email address.")
+
+
+Write a Python program to find the index of a given substring in a given string
+def find_substring_index(main_string, substring):
+    index = main_string.find(substring)
+    if index != -1:
+        return f"The substring '{substring}' is found at index {index}."
+    else:
+        return f"The substring '{substring}' was not found in the string."
+main_string = "Hello, welcome to the world of Python."
+substring = "welcome"
+result = find_substring_index(main_string, substring)
+print(result)
+
+Write a Python program to remove all whitespace characters from a given string.
+s="remove all white spaces"
+old=" "
+new=""
+new_str=s.replace(old,new)
+print(new_str)
+
+ Write a Python program to find the common characters between two given strings.
+str1="common strings"
+str2="characters"
+set1=set(str1)
+set2=set(str2)
+set3=set1 and set2
+str3=str(set3)
+print(str3)
+
+Write a Python program to find the second most frequent character in a given string.
+from collections import Counter
+def second_most_frequent_char(s):
+    freq = Counter(s)
+    if len(freq) < 2:
+        return None   
+    sorted_freq = sorted(freq.items(), key=lambda item: item[1], reverse=True)
+    second_most_freq_char, _ = sorted_freq[1]
+    return second_most_freq_char
+input_string = "ababcacabb"
+second_most_char = second_most_frequent_char(input_string)
+
+if second_most_char:
+    print(f"The second most frequent character in '{input_string}' is '{second_most_char}'.")
+else:
+    print("There is no second most frequent character in the string.")
+
+ Write a Python program to check if a given string is an anagram of another string
+st1='i am sai'
+st2='i  amsai'
+if len(st1)==len(st2):
+  if sorted(st1)==sorted(st2):
+    print("anagram")
+  else:
+    print("not anagram")
+else:
+  print("not anagram")
+
+
+Write a Python program to find the first non-repeating character in a given string.
+str='first non repeating character'
+char_count={}
+non_repeating=None
+for i in str:
+  if i in char_count:
+    char_count[i]+=1
+  else:
+    char_count[i]=1
+  if char_count[i]==1:
+    non_repeating=i
+    break  
+if non_repeating is not None:
+  print(f"first non repeating character is {non_repeating}")
+else:
+  print("There is no non repeating character in a given sentence")
+
+Write a Python program to replace all occurrences of a given word in a string with another word.
+'''st='occurrences'
+new=st.replace('c','d')
+print(new)'''
+
+st1='a string with another word'
+old='another'
+new='other'
+st2=st1.replace(old,new)
+print(st2)
+
+ Write a Python program to find the most frequent word in a given sentence
+sentence="most frequent word occurs most "
+words=sentence.split()
+word_count={}
+count=0
+for word in words:
+  if word in word_count:
+    word_count[word]+=1
+  else:
+    word_count[word]=1
+max_count=0
+max_frequent_word=None
+for word,count in word_count.items():
+  if count>max_count:
+    max_count=count
+    most_frequent_word=word
+print("frequent word is ",most_frequent_word,"and count is ",max_count)    
+
+Write a Python program to check if a given string contains only digits.
+st="12345f6"
+print(st.isdigit())
+
+ Write a Python program to remove all the vowels from a given string.
+st='vowels'
+v='aeiouAEIOU'
+c=''
+for i in st:
+  if i not in v:
+    c+=i   
+print(c)    
+
+Write a Python program to concatenate two strings without using the '+' operator.
+st1='oper'
+st2='ator'
+print(st1+st2)
+
+ Write a Python program to find the length of the longest word in a given sentence.
+str="find the length of the longest word in given sentence a"
+words=str.split()
+max_length=0
+for word in words:
+  word_length=len(word)
+  if word_length>max_length:
+    max_length=word_length
+
+print(f"longest word in a given sentence is {max_length}")    
+
+Write a Python program to capitalize the first letter of each word in a given string.
+st="the first letter of each word in a given string"
+print(st.title())
+
+Write a Python program to check if a given string is a palindrome or not.
+st1='mam'
+reverse=''
+for i in st1:
+  reverse=i+reverse
+if st1==reverse:
+  print("palindrome")
+else:
+  print("not a palindrome")
+
+Write a Python program to reverse a string using slicing.
+s='reverse'
+r_s=s[::-1]
+print(r_s)
+
+Write a Python program to count the number of occurrences of a character in a given string.
+st="occurrences"
+count={}
+for i in st:
+  if i in count:
+    count[i]+=1
+  else:
+    count[i]=1
+for i,c in count.items():
+  print(f"{i}={c}")

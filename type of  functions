@@ -1,0 +1,145 @@
+Write a Python program to concatenate two lists using a generator function.
+def concatenate(a,b):
+  return a+b
+a=[1,2,3,4]
+b=[5,6,7,8]
+print(concatenate(a,b))
+
+Write a Python program to find the length of the longest word in a given sentence using a reduce function.
+from functools import reduce
+def longest_word_length(sentence):
+    words = sentence.split() 
+    longest_length = reduce(lambda max_len, word: max(max_len, len(word)), words, 0)   
+    return longest_length
+if __name__ == "__main__":
+    sentence = "Find the length of the longest word in this sentence"
+    print(f"The length of the longest word is: {longest_word_length(sentence)}")
+
+Write a Python program to check if a given number is a prime number using a filter function
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    def is_not_divisor(x):
+        return n % x != 0
+    import math
+    potential_divisors = range(2, int(math.sqrt(n)) + 1)
+    divisors = list(filter(is_not_divisor, potential_divisors))
+    return len(divisors) == len(potential_divisors)
+if __name__ == "__main__":
+    number = 29 
+    if is_prime(number):
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
+
+
+Write a Python program to count the number of vowels in a given string using a map function
+def is_vowel(b):
+  return b.lower() in 'aeiou'
+def vowel_count(c):
+  vowel_map=map(is_vowel,c)
+  return sum(vowel_map)
+s='number of vowels in a given string'
+print(vowel_count(s))
+
+Write a Python program to find the LCM of two numbers using a built-in function.
+import math
+
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+if __name__ == "__main__":
+    num1 = 12  
+    num2 = 15  
+    result = lcm(num1, num2)
+    print(f"The LCM of {num1} and {num2} is: {result}")
+
+
+Write a Python program to find the sum of two numbers using a recursive function
+def recursive_sum(a, b):
+    if b == 0:
+        return a
+    elif a == 0:
+        return b
+    if b > 0:
+        return recursive_sum(a + 1, b - 1)
+    else:
+        return recursive_sum(a - 1, b + 1)
+if __name__ == "__main__":
+    num1 = 5  
+    num2 = 3      
+    result = recursive_sum(num1, num2)
+    print(f"The sum of {num1} and {num2} is: {result}")
+
+ Write a Python program to check if a given string is a valid password using a lambda function.
+import re
+
+is_valid_password = lambda password: (
+    len(password) >= 8 and                      
+    any(c.isupper() for c in password) and      
+    any(c.islower() for c in password) and      
+    any(c.isdigit() for c in password) and      
+    any(c in "!@#$%^&*()-_+=<>?/" for c in password)  
+)
+if __name__ == "__main__":
+    test_passwords = [
+        "Password123!",    
+        "pass123",         
+        "PASSWORD123!",    
+        "password",       
+        "P@ssw0rd" ]        
+    for password in test_passwords:
+        if is_valid_password(password):
+            print(f"'{password}' is a valid password.")
+        else:
+            print(f"'{password}' is not a valid password.")
+
+Write a Python program to sort a list of numbers in ascending order using a built-in function.
+def sort_numbers(numbers):
+    sorted_list = sorted(numbers)
+    return sorted_list
+def sort_in_place(numbers):
+    numbers.sort()
+if __name__ == "__main__":
+    numbers = [5, 3, 8, 1, 2, 7, 4, 6]
+    sorted_numbers = sort_numbers(numbers)
+    print(f"Sorted numbers using sorted(): {sorted_numbers}")
+    sort_in_place(numbers)
+    print(f"Sorted numbers using list.sort(): {numbers}")
+
+ Write a Python program to check if a given number is a perfect number using a user-defined function.
+def is_perfect_number(n):
+    if n <= 1:
+        return False    
+    sum_of_divisors = 0
+    for i in range(1, n):
+        if n % i == 0:
+            sum_of_divisors += i
+    return sum_of_divisors == n
+if __name__ == "__main__":
+    number = int(input())
+    
+    if is_perfect_number(number):
+        print(f"{number} is a perfect number.")
+    else:
+        print(f"{number} is not a perfect number.")
+
+
+Write a Python program to find the area of a circle using a user-defined function.
+import math
+def calculate_area_of_circle(radius):
+    return math.pi * (radius ** 2)
+if __name__ == "__main__":
+    try:
+        radius = float(input())
+        if radius < 0:
+            raise ValueError("The radius cannot be negative.")
+        
+        area = calculate_area_of_circle(radius)
+        print(f"The area of the circle with radius {radius} is: {area:.2f}")
+    
+    except ValueError as e:
+        print(f"Invalid input: {e}")
